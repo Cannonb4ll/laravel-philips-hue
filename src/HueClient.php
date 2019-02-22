@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Utilities\Hue;
+namespace Philips\Hue;
 
 use Carbon\Carbon;
 use GuzzleHttp\Client;

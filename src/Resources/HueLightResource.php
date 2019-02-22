@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Utilities\Hue\Resources;
+namespace Philips\Hue\Resources;
 
 class HueLightResource extends BaseHueResource
 {

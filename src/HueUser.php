@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Utilities\Hue;
+namespace Philips\Hue;
 
 use App\Utilities\Hue\Resources\HueUserResource;
 use Illuminate\Support\Str;
