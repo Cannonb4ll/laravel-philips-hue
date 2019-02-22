@@ -1,5 +1,7 @@
 # Laravel Philips Hue
 
+**STILL IN DEVELOPMENT, NOT READY**
+
 This package makes it possible to easily manage your lights. Easily trigger your lights
 whenever a support ticket comes in, or if a new user signs up.
 
