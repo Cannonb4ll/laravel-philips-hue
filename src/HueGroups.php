@@ -44,4 +44,13 @@ class HueGroups extends HueClient
             'on' => true
         ]);
     }
+
+    public function customState($id, $params)
+    {
+        if (!$id) {
+            return;
+        }
+
+        return $this->send('/bridge/' . $this->baseUser . '/groups/' . $id . '/action', 'put', $params);
+    }
 }
