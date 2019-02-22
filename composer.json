@@ -1,0 +1,29 @@
+{
+  "name": "cannonb4ll/laravel-philips-hue",
+  "description": "Laravel Philips Hue Package",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Dennis Smink",
+      "email": "info@denissmink.nl"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": "^7.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Philips\\Hue\\": "src/"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0-dev"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  }
+}
