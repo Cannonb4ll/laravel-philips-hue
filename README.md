@@ -1,4 +1,4 @@
-# Laravel Philips Hue
+# Laravel Philips Hue 💡
 
 ## Introduction
 
