@@ -148,3 +148,5 @@ https://developers.meethue.com/my-apps/
 https://account.meethue.com/apps
 
 https://account.meethue.com/bridge
+
+*This is not an official package by Philips*
