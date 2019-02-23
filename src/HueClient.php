@@ -122,4 +122,9 @@ class HueClient
     {
         return new HueUser;
     }
+
+    public function schedules()
+    {
+        return new HueSchedule;
+    }
 }
