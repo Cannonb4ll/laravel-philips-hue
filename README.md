@@ -95,6 +95,9 @@ Route::get('hue', function () {
 });
 ```
 
+**NOTE:** To request a username, you will have to physically press the 'link' button on your bridge.
+After you pressed it, you have 30 seconds to get your username.
+
 Now visit your application with /start-hue at the end so oAuth2 login can begin.
 You will be prompted to allow your own application permissions, accept this, you will be redirected to your own application.
 This is the point when you redirect that you will receive the username in the `dd()` method.
