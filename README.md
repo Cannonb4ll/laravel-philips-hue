@@ -132,6 +132,12 @@ All the access data is saved in the `storage/app/hue.json` file, this contains t
     ]);
 ```
 
+## TODO
+
+- [ ] Ability to use without physically pressing the link button
+- [ ] Add exceptions
+- [ ] Add testing
+
 ## Helpful links
 https://www.meethue.com/api/nupnp
 
