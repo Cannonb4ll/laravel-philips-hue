@@ -1,6 +1,6 @@
 {
   "name": "cannonb4ll/laravel-philips-hue",
-  "description": "Laravel Philips Hue Package",
+  "description": "Laravel Philips Hue package to control your lights with remote support",
   "type": "library",
   "license": "MIT",
   "authors": [
