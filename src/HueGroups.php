@@ -2,7 +2,7 @@
 
 namespace Philips\Hue;
 
-use App\Utilities\Hue\Resources\HueGroupResource;
+use Philips\Hue\Resources\HueGroupResource;
 
 class HueGroups extends HueClient
 {

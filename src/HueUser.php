@@ -2,8 +2,8 @@
 
 namespace Philips\Hue;
 
-use App\Utilities\Hue\Resources\HueUserResource;
 use Illuminate\Support\Str;
+use Philips\Hue\Resources\HueUserResource;
 
 class HueUser extends HueClient
 {
