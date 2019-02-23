@@ -19,6 +19,22 @@ Require the package first:
 $ composer require dennissmink/laravel-philips-hue
 ```
 
+Add this to the `config/services.php` file:
+
+```php
+...
+
+'philips-hue' => [
+    'client_id' => env('PHILIPS_HUE_CLIENT_ID'),
+    'client_secret' => env('PHILIPS_HUE_CLIENT_SECRET'),
+    'app_id' => env('PHILIPS_HUE_APP_ID'),
+    'device_id' => env('PHILIPS_HUE_DEVICE_ID'),
+    'user' => env('PHILIPS_HUE_USERNAME')
+]
+
+...
+```
+
 Sign up (or login) to Philips Hue developer:
 
 https://developers.meethue.com/register/
@@ -43,7 +59,7 @@ After that, note these variables:
 We still need 2 variables, the device ID and username we will be using for your bridge.
 
 **Make sure you are on the computer on the same network as your Philips Hue bridge.**
-Visit this URL and note the device ID: https://www.meethue.com/api/nupnp
+Visit this URL and note the device ID: https://www.meethue.com/api/nupnp (or visit https://account.meethue.com/bridge, you will see the bridge ID there too)
 
 Fill in the details accordingly:
 
@@ -116,3 +132,7 @@ https://www.meethue.com/api/nupnp
 https://developers.meethue.com/develop/hue-api/
 
 https://developers.meethue.com/my-apps/
+
+https://account.meethue.com/apps
+
+https://account.meethue.com/bridge
