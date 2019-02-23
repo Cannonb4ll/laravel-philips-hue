@@ -1,6 +1,9 @@
 # Laravel Philips Hue
 
-**STILL IN DEVELOPMENT, NOT READY**
+## Introduction
+
+I created this package for my company Ploi (https://ploi.io) to control our office
+lights. For example, when we receive a support ticket, our lights briefly light up green (Ploi's green color), fade out and in a bit.
 
 This package makes it possible to easily manage your lights. Easily trigger your lights
 whenever a support ticket comes in, or if a new user signs up.
