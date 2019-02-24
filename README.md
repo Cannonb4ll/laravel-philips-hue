@@ -130,8 +130,12 @@ All the access data is saved in the `storage/app/hue.json` file, this contains t
 
 ## TODO
 
-- [ ] Ability to use without physically pressing the link button
+- [X] Ability to use without physically pressing the link button
 - [ ] Add scenes resource
+- [ ] Add schedules resource
+- [ ] Add sensors resource
+- [ ] Add rules resource
+- [ ] Add capabilities resource
 - [ ] Add exceptions
 - [ ] Add testing
 
