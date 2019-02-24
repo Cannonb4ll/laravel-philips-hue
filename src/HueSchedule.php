@@ -2,11 +2,15 @@
 
 namespace Philips\Hue;
 
-use Illuminate\Support\Str;
 use Philips\Hue\Resources\HueScheduleResource;
 
 class HueSchedule extends HueClient
 {
+    /**
+     * Returns all the schedules in your bridge
+     *
+     * @return \Illuminate\Support\Collection
+     */
     public function all()
     {
         return collect($this->send('/bridge/' . $this->baseUser . '/schedules'))
@@ -15,6 +19,13 @@ class HueSchedule extends HueClient
             });
     }
 
+    /**
+     * Returns a specific schedule object
+     *
+     * @param $id
+     *
+     * @return \Philips\Hue\Resources\HueScheduleResource
+     */
     public function get($id)
     {
         return new HueScheduleResource($this->send('/bridge/' . $this->baseUser . '/schedules/' . $id));

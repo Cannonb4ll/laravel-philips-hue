@@ -15,9 +15,7 @@ class HueClient
     {
         $this->baseUser = config('services.philips-hue.user');
 
-        $this->guzzle = new Client([
-            'allow_redirects' => true
-        ]);
+        $this->guzzle = new Client;
     }
 
     public function send($url, $method = 'get', $params = [])
@@ -40,7 +38,7 @@ class HueClient
 
     public function getAccessTokenForTheFirstTime($code)
     {
-        $r = $this->guzzle->post('https://api.meethue.com/oauth2/token', [
+        $r = $this->guzzle->post($this->baseUrl . '/oauth2/token', [
             'query' => [
                 'code' => $code,
                 'grant_type' => 'authorization_code'
@@ -62,13 +60,13 @@ class HueClient
     {
         $tokens = json_decode(file_get_contents(storage_path('app/hue.json')));
 
-        // Check if the previous access token is still valid
+        // Check if the previous access token is still valid, if its valid then return it (reduces API calls)
         if (Carbon::createFromTimestamp(strtotime($tokens->expires_at)) > Carbon::now()) {
             return $tokens->access_token;
         }
 
         // If its not, request a new one
-        $r = $this->guzzle->post('https://api.meethue.com/oauth2/refresh?grant_type=refresh_token', [
+        $r = $this->guzzle->post($this->baseUrl . '/oauth2/refresh?grant_type=refresh_token', [
             'form_params' => [
                 'refresh_token' => $tokens->refresh_token,
             ],
@@ -94,7 +92,7 @@ class HueClient
             'response_type' => 'code'
         ]);
 
-        header('Location: https://api.meethue.com/oauth2/auth?' . $parameters);
+        header('Location: ' . $this->baseUrl . '/oauth2/auth?' . $parameters);
         exit;
     }
 
