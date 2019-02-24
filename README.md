@@ -61,7 +61,6 @@ After that, note these variables:
 
 We still need 2 variables, the device ID and username we will be using for your bridge.
 
-**Make sure you are on the computer on the same network as your Philips Hue bridge.**
 Visit this URL and note the device ID: https://www.meethue.com/api/nupnp (or visit https://account.meethue.com/bridge, you will see the bridge ID there too)
 
 Fill in the details accordingly:
@@ -97,9 +96,6 @@ Route::get('hue', function () {
     dd($hue->lights()->all());
 });
 ```
-
-⚠ **NOTE:** To request a username, you will have to physically press the 'link' button on your bridge.
-After you pressed it, you have 30 seconds to get your username.
 
 Now visit your application with /start-hue at the end so oAuth2 login can begin.
 You will be prompted to allow your own application permissions, accept this, you will be redirected to your own application.
