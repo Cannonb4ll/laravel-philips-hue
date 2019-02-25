@@ -136,6 +136,8 @@ All the access data is saved in the `storage/app/hue.json` file, this contains t
 - [ ] Add capabilities resource
 - [ ] Add exceptions
 - [ ] Add testing
+- [ ] Fix refresh token refreshing automatically
+- [ ] Update readme methods
 
 ## Helpful links
 https://www.meethue.com/api/nupnp

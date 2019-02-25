@@ -61,7 +61,7 @@ class HueClient
         $tokens = json_decode(file_get_contents(storage_path('app/hue.json')));
 
         // Check if the previous access token is still valid, if its valid then return it (reduces API calls)
-        if (Carbon::createFromTimestamp(strtotime($tokens->expires_at)) > Carbon::now()) {
+        if (Carbon::createFromTimestamp(strtotime($tokens->access_token_expires_at)) > Carbon::now()) {
             return $tokens->access_token;
         }
 
@@ -99,8 +99,12 @@ class HueClient
     public function setTokenFile($data)
     {
         $data = json_decode($data);
-        $data->expires_at = Carbon::now()
+        $data->access_token_expires_at = Carbon::now()
             ->addSeconds($data->access_token_expires_in)
+            ->format('Y-m-d H:i:s');
+
+        $data->refresh_token_expires_at = Carbon::now()
+            ->addSeconds($data->refresh_token_expires_in)
             ->format('Y-m-d H:i:s');
 
         \Storage::put('hue.json', json_encode($data));
