@@ -51,7 +51,7 @@ Fill in the fields accordingly to their form.
 **Callback URL**: You will have to fill in a valid callback URL (certainly in testing enviroment, or you'd have to do this in production).
 This is because we will get the access and refresh tokens right away and store these in your application.
 In case if you are using valet, run `valet share` in your terminal to get an ngrok URL. Use this URL as callback in that case:
-`{NGROK_HOST}/hue` (Example: `http://aa0515c9.ngrok.io/hue`)
+`{NGROK_HOST}/hue/auth/receive` (Example: `http://aa0515c9.ngrok.io/hue/auth/receive`)
 
 After that, note these variables:
 
