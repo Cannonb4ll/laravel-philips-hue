@@ -21,7 +21,7 @@ class HueUser extends HueClient
     public function create($name = null, $forceLinkButton = true)
     {
         if (!$name) {
-            $name = Str::random();
+            $name = Str::random(10);
         }
 
         if ($forceLinkButton) {

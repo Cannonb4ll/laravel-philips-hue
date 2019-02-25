@@ -75,31 +75,16 @@ PHILIPS_HUE_USERNAME= <-- We will get this in below step
 
 Next we will have to create a user to be able to authenticate with your bridge.
 
-Quickly add this to your web.php routes file (this is temporary, you can delete later) so we can get a username:
+The package will register 2 routes for you:
 
-```php
-Route::get('start-hue', function(){
-    $hue = new HueClient();
+http://{app-url}/hue/auth
 
-    return redirect($hue->startOAuth());
-});
+http://{app-url}/hue/auth/receive
 
-Route::get('hue', function () {
-    $hue = new HueClient();
-    
-    if ($code = request('code')) {
-        $hue->getAccessTokenForTheFirstTime(request('code'));
-        
-        dd($hue->users()->create('your-username'));
-    }
-    
-    dd($hue->lights()->all());
-});
-```
+Visit `/hue/auth` first to start creating a user.
 
-Now visit your application with /start-hue at the end so oAuth2 login can begin.
 You will be prompted to allow your own application permissions, accept this, you will be redirected to your own application.
-This is the point when you redirect that you will receive the username in the `dd()` method.
+This is the point when you redirect that you will receive the username in the view from the package.
 
 Grab this username (this is saved in your bridge), and also enter this in your `.env` file:
 
@@ -108,6 +93,19 @@ PHILIPS_HUE_USERNAME=
 ```
 
 This is it! Now you should be able to execute the methods which we describe below.
+
+You can also disable the default routes from the package by adding `routes => false` to your `services.php` file:
+
+```php
+'philips-hue' => [
+    'client_id' => env('PHILIPS_HUE_CLIENT_ID'),
+    'client_secret' => env('PHILIPS_HUE_CLIENT_SECRET'),
+    'app_id' => env('PHILIPS_HUE_APP_ID'),
+    'device_id' => env('PHILIPS_HUE_DEVICE_ID'),
+    'user' => env('PHILIPS_HUE_USERNAME'),
+    'routes' => false
+]
+```
 
 All the access data is saved in the `storage/app/hue.json` file, this contains the keys to access Philips Hue API.
 
