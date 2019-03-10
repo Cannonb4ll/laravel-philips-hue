@@ -19,7 +19,7 @@ Syntax is as easy as this;
 Require the package first:
 
 ```
-$ composer require dennissmink/laravel-philips-hue
+$ composer require cannonb4ll/laravel-philips-hue
 ```
 
 Add this to the `config/services.php` file:
