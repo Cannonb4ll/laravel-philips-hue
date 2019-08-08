@@ -30,7 +30,7 @@ class HueController extends Controller
         // This is being triggered after we created our first user, so the developer can enter the username
         // in the .env file.
         if ($username = $request->input('username')) {
-            return view('hue::auth', compact('username', 'hueCredentials'));
+            return view('hue::auth', compact('username'));
         }
 
         // If all is well, we display a default view to show its working.
