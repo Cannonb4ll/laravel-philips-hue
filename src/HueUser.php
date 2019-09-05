@@ -3,6 +3,7 @@
 namespace Philips\Hue;
 
 use Illuminate\Support\Str;
+use Illuminate\Support\Arr;
 use Philips\Hue\Resources\HueUserResource;
 
 class HueUser extends HueClient
@@ -30,7 +31,7 @@ class HueUser extends HueClient
             ]);
         }
 
-        return object_get(array_first($this->send('/bridge', 'post', [
+        return object_get(Arr::first($this->send('/bridge', 'post', [
             'devicetype' => env('PHILIPS_HUE_APP_ID') . '#' . $name
         ])), 'success.username');
     }
