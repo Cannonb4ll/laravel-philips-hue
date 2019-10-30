@@ -61,7 +61,7 @@ After that, note these variables:
 
 We still need 2 variables, the device ID and username we will be using for your bridge.
 
-Visit this URL and note the device ID: https://www.meethue.com/api/nupnp (or visit https://account.meethue.com/bridge, you will see the bridge ID there too)
+Visit this URL and note the device ID: https://discovery.meethue.com/ (or visit https://account.meethue.com/bridge, you will see the bridge ID there too)
 
 Fill in the details accordingly:
 
@@ -140,7 +140,7 @@ All the access data is saved in the `storage/app/hue.json` file, this contains t
 - [ ] Update readme methods
 
 ## Helpful links
-https://www.meethue.com/api/nupnp
+https://discovery.meethue.com/
 
 https://developers.meethue.com/develop/hue-api/
 
