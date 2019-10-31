@@ -6,6 +6,10 @@ use Illuminate\Support\ServiceProvider;
 
 class PhilipsHueServiceProvider extends ServiceProvider
 {
+    public function register() {
+        $this->mergeConfigFrom(__DIR__ . '/../config/philipshue.php', 'services');
+    }
+
     public function boot()
     {
         // If we do not disable the routes, load in the roads & views.
