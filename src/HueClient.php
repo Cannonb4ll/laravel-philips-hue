@@ -7,8 +7,19 @@ use GuzzleHttp\Client;
 
 class HueClient
 {
+    /**
+     * @var Client
+     */
     private $guzzle;
+
+    /**
+     * @var string
+     */
     private $baseUrl = 'https://api.meethue.com';
+
+    /**
+     * @var string
+     */
     protected $baseUser;
 
     public function __construct()
