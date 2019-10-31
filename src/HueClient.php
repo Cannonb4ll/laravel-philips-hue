@@ -18,6 +18,15 @@ class HueClient
         $this->guzzle = new Client;
     }
 
+    /**
+     * Sends a request and returns response from Hue api
+     *
+     * @param        $url
+     * @param string $method
+     * @param array  $params
+     *
+     * @return mixed
+     */
     public function send($url, $method = 'get', $params = [])
     {
         $options = [
@@ -36,6 +45,11 @@ class HueClient
         return json_decode($r->getBody()->getContents());
     }
 
+    /**
+     * @param $code
+     *
+     * @return mixed
+     */
     public function getAccessTokenForTheFirstTime($code)
     {
         $r = $this->guzzle->post($this->baseUrl . '/oauth2/token', [
@@ -56,6 +70,9 @@ class HueClient
         return json_decode($tokens);
     }
 
+    /**
+     * @return mixed
+     */
     public function refreshAndGetAccessToken()
     {
         $tokens = json_decode(file_get_contents(storage_path('app/hue.json')));
@@ -83,6 +100,9 @@ class HueClient
         return object_get(json_decode($tokens), 'access_token');
     }
 
+    /**
+     * @return void
+     */
     public function startOAuth()
     {
         $parameters = http_build_query([
@@ -96,6 +116,11 @@ class HueClient
         exit;
     }
 
+    /**
+     * @param $data
+     *
+     * @return void
+     */
     public function setTokenFile($data)
     {
         $data = json_decode($data);
@@ -110,21 +135,33 @@ class HueClient
         \Storage::put('hue.json', json_encode($data));
     }
 
+    /**
+     * @return HueLight
+     */
     public function lights()
     {
         return new HueLight;
     }
 
+    /**
+     * @return HueGroups
+     */
     public function groups()
     {
         return new HueGroups;
     }
 
+    /**
+     * @return HueUser
+     */
     public function users()
     {
         return new HueUser;
     }
 
+    /**
+     * @return HueSchedule
+     */
     public function schedules()
     {
         return new HueSchedule;
