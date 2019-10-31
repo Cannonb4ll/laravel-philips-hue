@@ -7,7 +7,7 @@ use Illuminate\Support\ServiceProvider;
 class PhilipsHueServiceProvider extends ServiceProvider
 {
     public function register() {
-        $this->mergeConfigFrom(__DIR__ . '/../config/philipshue.php', 'services');
+        $this->mergeConfigFrom(__DIR__ . '/../config/philipshue.php', 'philipshue');
     }
 
     public function boot()
