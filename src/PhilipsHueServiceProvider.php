@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 
 class PhilipsHueServiceProvider extends ServiceProvider
 {
+
     public function boot()
     {
         // If we do not disable the routes, load in the roads & views.
