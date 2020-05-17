@@ -12,7 +12,7 @@ class HueController extends Controller
     {
         $hue = new HueClient;
 
-        return redirect($hue->startOAuth());
+        $hue->startOAuth();
     }
 
     public function receive(Request $request)

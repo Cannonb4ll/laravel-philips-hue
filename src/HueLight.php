@@ -22,13 +22,13 @@ class HueLight extends HueClient
     /**
      * Returns a specific light object
      *
-     * @param null $id
+     * @param string|null $id
      *
      * @return \Philips\Hue\Resources\HueLightResource|void
      */
     public function get($id = null)
     {
-        if (!$id) {
+        if ($id === null) {
             return;
         }
 
@@ -38,7 +38,7 @@ class HueLight extends HueClient
     /**
      * Change the light state to off
      *
-     * @param $id
+     * @param string $id
      *
      * @return mixed|void
      */
@@ -56,7 +56,7 @@ class HueLight extends HueClient
     /**
      * Change the light state to on
      *
-     * @param $id
+     * @param string $id
      *
      * @return mixed|void
      */
@@ -74,7 +74,7 @@ class HueLight extends HueClient
     /**
      * Make the light do a specific 'breathe' animation
      *
-     * @param $id
+     * @param string $id
      *
      * @return mixed|void
      */
@@ -93,10 +93,10 @@ class HueLight extends HueClient
      * Send in your custom states, you can find the parameters here:
      * https://developers.meethue.com/develop/hue-api/lights-api/#set-light-state
      *
-     * @param $id
-     * @param $params
+     * @param string $id
+     * @param array $params
      *
-     * @return mixed|void
+     * @return mixed
      */
     public function customState($id, $params)
     {

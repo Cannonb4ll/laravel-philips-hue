@@ -22,13 +22,13 @@ class HueGroups extends HueClient
     /**
      * Return a specific group object
      *
-     * @param null $id
+     * @param string|null $id
      *
      * @return \Philips\Hue\Resources\HueGroupResource|void
      */
     public function get($id = null)
     {
-        if (!$id) {
+        if ($id === null) {
             return;
         }
 
@@ -38,7 +38,7 @@ class HueGroups extends HueClient
     /**
      * Set all the lights off in this group
      *
-     * @param $id
+     * @param string $id
      *
      * @return mixed|void
      */
@@ -56,7 +56,7 @@ class HueGroups extends HueClient
     /**
      * Set all the lights on in this group
      *
-     * @param $id
+     * @param string $id
      *
      * @return mixed|void
      */
@@ -75,10 +75,10 @@ class HueGroups extends HueClient
      * Send in your custom states, you can find the parameters here:
      * https://developers.meethue.com/develop/hue-api/groupds-api/#set-gr-state
      *
-     * @param $id
-     * @param $params
+     * @param string $id
+     * @param array $params
      *
-     * @return mixed|void
+     * @return mixed
      */
     public function customState($id, $params)
     {

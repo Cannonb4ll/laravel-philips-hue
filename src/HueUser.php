@@ -14,14 +14,14 @@ class HueUser extends HueClient
      *
      * It will return the username right away.
      *
-     * @param null $name
+     * @param string|null $name
      * @param bool $forceLinkButton
      *
      * @return string
      */
     public function create($name = null, $forceLinkButton = true)
     {
-        if (!$name) {
+        if ($name === null) {
             $name = Str::random(10);
         }
 
@@ -39,7 +39,7 @@ class HueUser extends HueClient
     /**
      * Returns a new user in your bridge.
      *
-     * @param $id
+     * @param string $id
      *
      * @return \Philips\Hue\Resources\HueUserResource
      */

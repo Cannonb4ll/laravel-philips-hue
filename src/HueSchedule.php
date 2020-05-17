@@ -22,7 +22,7 @@ class HueSchedule extends HueClient
     /**
      * Returns a specific schedule object
      *
-     * @param $id
+     * @param string $id
      *
      * @return \Philips\Hue\Resources\HueScheduleResource
      */
