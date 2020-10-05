@@ -32,7 +32,7 @@ class HueClient
     /**
      * Sends a request and returns response from Hue api
      *
-     * @param        $url
+     * @param string $url
      * @param string $method
      * @param array  $params
      *
@@ -57,9 +57,9 @@ class HueClient
     }
 
     /**
-     * @param $code
+     * @param string $code
      *
-     * @return mixed
+     * @return object
      */
     public function getAccessTokenForTheFirstTime($code)
     {
@@ -120,7 +120,7 @@ class HueClient
             'clientid' => config('services.philips-hue.client_id'),
             'appid' => config('services.philips-hue.app_id'),
             'deviceid' => config('services.philips-hue.device_id'),
-            'response_type' => 'code'
+            'response_type' => 'code',
         ]);
 
         header('Location: ' . $this->baseUrl . '/oauth2/auth?' . $parameters);
@@ -128,7 +128,7 @@ class HueClient
     }
 
     /**
-     * @param $data
+     * @param string $data
      *
      * @return void
      */
