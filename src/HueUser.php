@@ -32,7 +32,7 @@ class HueUser extends HueClient
         }
 
         return object_get(Arr::first($this->send('/bridge', 'post', [
-            'devicetype' => env('PHILIPS_HUE_APP_ID') . '#' . $name
+            'devicetype' => config('services.philips-hue.app_id') . '#' . $name
         ])), 'success.username');
     }
 
