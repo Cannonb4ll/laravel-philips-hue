@@ -69,7 +69,7 @@ class HueClient
                 'grant_type' => 'authorization_code'
             ],
             'headers' => [
-                'Authorization' => 'Basic ' . base64_encode(config('services.philips-hue.client_id') . ':' . config('services.philips-hue.client_scret')),
+                'Authorization' => 'Basic ' . base64_encode(config('services.philips-hue.client_id') . ':' . config('services.philips-hue.client_secret')),
                 'Content-Type' => 'application/json'
             ]
         ]);
@@ -99,7 +99,7 @@ class HueClient
                 'refresh_token' => $tokens->refresh_token,
             ],
             'headers' => [
-                'Authorization' => 'Basic ' . base64_encode(config('services.philips-hue.client_id') . ':' . config('services.philips-hue.client_scret')),
+                'Authorization' => 'Basic ' . base64_encode(config('services.philips-hue.client_id') . ':' . config('services.philips-hue.client_secret')),
                 'Content-Type' => 'application/x-www-form-urlencoded'
             ]
         ]);
